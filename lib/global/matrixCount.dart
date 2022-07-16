@@ -15,7 +15,7 @@ class MatrixCount {
   static int max = 2;
 
   // Direcciones para poder calcular las 8 posiciones y validar si hay que anexar a la isla
-  // static List<List<int>> directions = [[-1, 0], [0, -1], [1, 0], [0, 1], [-1, -1], [1, 1], [-1, 1], [1, -1]];
+  // static List<List<int>> dir = [[-1, 0], [0, -1], [1, 0], [0, 1], [-1, -1], [1, 1], [-1, 1], [1, -1]];
 
 
   static validateInputs(FormMatrix formMatrix, BuildContext context) {

@@ -17,7 +17,7 @@ class SearchPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                HeaderNasa(),
+                const HeaderNasa(isSettings: true),
                 ChangeNotifierProvider(
                   create: (_) => GiphService(),
                   child: Search()

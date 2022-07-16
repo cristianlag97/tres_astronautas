@@ -4,7 +4,10 @@ import 'package:tres_astronautras/providers/theme_provider.dart';
 import 'package:tres_astronautras/ui/colors.dart';
 
 class HeaderNasa extends StatelessWidget {
-  const HeaderNasa({Key? key}) : super(key: key);
+
+  final bool isSettings;
+
+  const HeaderNasa({Key? key, required this.isSettings}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,8 @@ class HeaderNasa extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 5),
-              Container(
+              isSettings
+              ? Container(
                 width: 40,
                 child: MaterialButton(
                   elevation: 1,
@@ -40,7 +44,7 @@ class HeaderNasa extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   shape: const CircleBorder(),
                 ),
-              ),
+              ) : const SizedBox(),
               const SizedBox(width: 20),
             ],
           ),

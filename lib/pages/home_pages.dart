@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: const [
-              HeaderNasa(),
+              HeaderNasa(isSettings: true),
               SizedBox(height: 40),
               Home()
             ],

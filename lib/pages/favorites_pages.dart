@@ -18,7 +18,7 @@ class FavotiresPage extends StatelessWidget {
           height: double.infinity,
           child: Column(
             children: [
-              const HeaderNasa(),
+              const HeaderNasa(isSettings: true),
               _Title(),
               const SizedBox(height: 10),
               const _Body()

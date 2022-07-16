@@ -21,7 +21,7 @@ class CalendarPageState extends State<CalendarPage> {
       body: SafeArea(
         child: Column(
           children: [
-            HeaderNasa(),
+            const HeaderNasa(isSettings: true,),
             Container(
               height: MediaQuery.of(context).size.height *0.7,
               padding: const EdgeInsets.only(left: 18, bottom: 16),

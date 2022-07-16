@@ -16,7 +16,7 @@ class SettingsPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            HeaderNasa(),
+            const HeaderNasa(isSettings: false),
             const Text('Configuración', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w300)),
             const Divider(),
             SwitchListTile.adaptive(
