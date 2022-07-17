@@ -73,6 +73,7 @@ class Search extends StatelessWidget {
                 ),
               ),
               IconButton(
+                splashRadius: 2,
                 onPressed: () {
                   FocusScope.of(context).unfocus();
                   search.searchGiph(controller.text);
@@ -85,7 +86,7 @@ class Search extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         Container(
-          height: MediaQuery.of(context).size.height * 0.725,
+          height: MediaQuery.of(context).size.height,
           child: FutureBuilder(
           future: prueba.syncronic(search.isOn? controller.text : 'home'),
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
@@ -130,9 +131,5 @@ class Search extends StatelessWidget {
         )
       ],
     );
-  }
-
-  searchB() {
-    prueba.syncronic(controller.text.trim());
   }
 }

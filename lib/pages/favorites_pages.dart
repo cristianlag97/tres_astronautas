@@ -37,27 +37,30 @@ class _Title extends StatelessWidget {
 
     final theme = Provider.of<ThemeProvider>(context).isDark;
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+    return Container(
+      // padding: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text('Favorites', style: TextStyle(fontSize: 35, fontFamily: "provicali")),
-              Container(
-                width: 40,
-                child: MaterialButton(
-                  elevation: 1,
-                  onPressed:() => Navigator.pushNamed(context, 'settings'),
-                  color: theme ? darkMode : Colors.white,
-                  textColor: theme ? Colors.white : Colors.black,
-                  child: const Icon(Icons.add, size: 20,),
-                  padding: const EdgeInsets.all(8),
-                  shape: const CircleBorder(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Favorites', style: TextStyle(fontSize: 35, fontFamily: "provicali")),
+                Container(
+                  width: 40,
+                  child: MaterialButton(
+                    elevation: 1,
+                    onPressed:() => Navigator.pushNamed(context, 'settings'),
+                    color: theme ? darkMode : Colors.white,
+                    textColor: theme ? Colors.white : Colors.black,
+                    child: const Icon(Icons.add, size: 20,),
+                    padding: const EdgeInsets.all(8),
+                    shape: const CircleBorder(),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           const SizedBox(height: 20),
           SingleChildScrollView(
@@ -65,6 +68,7 @@ class _Title extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
+                const SizedBox(width: 20),
                 ButtonNav(context, 'All', false),
                 const SizedBox(width: 8),
                 ButtonNav(context, 'Happy Hours', true),
@@ -73,8 +77,8 @@ class _Title extends StatelessWidget {
                 const SizedBox(width: 8),
                 ButtonNav(context, 'Beer', false),
                 const SizedBox(width: 8),
-                ButtonNav(context, 'Example', false),
-                const SizedBox(width: 8),
+                ButtonNav(context, 'Other', false),
+                const SizedBox(width: 20),
               ],
             ),
           )
@@ -94,7 +98,7 @@ class _Title extends StatelessWidget {
         onPressed:() {
           print(title);
         },
-        child: Text(title, style: TextStyle(color:isColor? Colors.white : theme ? Colors.white : Colors.black, fontSize: 12))
+        child: Text(title, style: TextStyle(color:isColor? Colors.white : theme ? Colors.white : Colors.black, fontSize: 15))
       ),
     );
   }
